@@ -1,0 +1,24 @@
+ja:
+  books: ブック一覧
+  new_book: 新しいブック
+  editing_book: 編集中のブック
+  new: 新規登録
+  show: 詳細
+  edit: 編集
+  destroy: 削除
+  back: 戻る
+  register_book: ブックを登録
+  created_book_message: ブックの登録が完了しました。
+  updated_book_message: ブックの更新が完了しました。
+  destroyed_book_message: ブックの削除が完了しました。
+  destroy_book_confirm_message: 本当にブックを削除してもよろしいですか?
+  activerecord:
+    models:
+      book: ブック
+    attributes:
+      book:
+        id: ID
+        title: タイトル
+        memo: メモ
+        author: 著者
+        picture: イメージ
