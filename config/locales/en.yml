@@ -1,5 +1,4 @@
 en:
-  books: Books
   new_book: New Book
   editing_book: Editing Book
   new: New Book
@@ -8,9 +7,10 @@ en:
   destroy: Destroy
   back: Back
   register_book: Register Book
-  created_book_message: Book was successfully created.
-  updated_book_message: Book was successfully updated.
-  destroyed_book_message: Book was successfully destroyed.
+  created: created.
+  updated: updated.
+  destroyed: destroyed.
+  completed_message: "Book was successfully %{message}"
   destroy_book_confirm_message: Are you sure?
   activerecord:
     models:
