@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong><%= User.human_attribute_name(:image) %>:</strong>
+  <%= image_tag @user.image, :size => '32x32' if @user.image.attached? %>
+</p>
+
+<p>
   <strong><%= User.human_attribute_name(:postal_code) %>:</strong>
   <%= @user.postal_code %>
 </p>
