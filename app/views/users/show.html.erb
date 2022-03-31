@@ -12,7 +12,7 @@
 
 <p>
   <strong><%= User.human_attribute_name(:image) %>:</strong>
-  <%= image_tag @user.image, :size => '32x32' if @user.image.attached? %>
+  <%= image_tag @user.image.variant(resize:'32x32').processed if @user.image.attached? %>
 </p>
 
 <p>
