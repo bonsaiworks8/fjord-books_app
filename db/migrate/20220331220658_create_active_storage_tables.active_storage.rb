@@ -27,10 +27,7 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.foreign_key :active_storage_blobs, column: :blob_id
     end
 
-    # rubocop:disable Rails/CreateTableWithTimestamps
     create_table :active_storage_variant_records do |t|
-      # rubocop:enable Rails/CreateTableWithTimestamps
-
       t.belongs_to :blob, null: false, index: false
       t.string :variation_digest, null: false
 
