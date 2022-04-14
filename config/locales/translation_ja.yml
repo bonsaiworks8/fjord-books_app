@@ -1,4 +1,13 @@
 ja:
+  followings: フォロー一覧
+  followers: フォロワー一覧
+  follow: フォロー
+  unfollow: フォロー解除
+  follow_number: フォロー数
+  follower_number: フォロワー数
+  follow_completed: フォローしました。
+  unfollow_completed: フォロー解除しました。
+
   activerecord:
     models:
       book: 本  #g
