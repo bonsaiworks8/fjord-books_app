@@ -28,21 +28,21 @@
 <p>
   <strong><%= t('follow_number') %>:</strong>
   <%= @user.followings.count %>
-  <%= link_to t('followings'), followings_path %>
+  <%= link_to t('followings'), followings_user_path %>
 </p>
 
 <p>
   <strong><%= t('follower_number') %>:</strong>
   <%= @user.followers.count %>
-  <%= link_to t('followers'), followers_path %>
+  <%= link_to t('followers'), followers_user_path %>
 </p>
 
 <p>
   <% if @user.id != current_user.id %>
     <% if !current_user.followings.include?(@user) %>
-      <%= link_to t('follow'), follow_path, method: :post %>
+      <%= link_to t('follow'), followings_user_path, method: :post %>
     <% else %>
-      <%= link_to t('unfollow'), unfollow_path, method: :delete %>
+      <%= link_to t('unfollow'), followings_user_path, method: :delete %>
     <% end %>
   <% end %>
 </p>
