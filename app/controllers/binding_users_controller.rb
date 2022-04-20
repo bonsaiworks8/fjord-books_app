@@ -15,9 +15,8 @@ class BindingUsersController < ApplicationController
     rel = BindingUser.new
     rel.followed_id = params[:id]
     rel.follower_id = current_user.id
-    rel.save
 
-    redirect_to users_url, notice: t('follow_completed')
+    redirect_to users_url, notice: t('follow_completed') if rel.save
   end
 
   def destroy
