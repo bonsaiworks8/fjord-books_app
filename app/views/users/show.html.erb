@@ -40,9 +40,9 @@
 <p>
   <% if @user.id != current_user.id %>
     <% if !current_user.followings.include?(@user) %>
-      <%= link_to t('follow'), followings_user_path, method: :post %>
+      <%= link_to t('follow'), followings_path, method: :post %>
     <% else %>
-      <%= link_to t('unfollow'), followings_user_path, method: :delete %>
+      <%= link_to t('unfollow'), following_path, method: :delete %>
     <% end %>
   <% end %>
 </p>

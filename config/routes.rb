@@ -7,8 +7,7 @@ Rails.application.routes.draw do
     member do
       get :followings, to: 'binding_users#followings'
       get :followers, to: 'binding_users#followers'
-      post :followings, to: 'binding_users#create'
-      delete :followings, to: 'binding_users#destroy'
+      resources :followings, controller: :binding_users, only: %i(create destroy)
     end
   end
   resources :users, only: %i(index show)
