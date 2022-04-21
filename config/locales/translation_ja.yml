@@ -7,6 +7,8 @@ ja:
   follower_number: フォロワー数
   follow_completed: フォローしました。
   unfollow_completed: フォロー解除しました。
+  follow_failed: フォローに失敗しました。
+  unfollow_failed: フォロー解除に失敗しました。
 
   activerecord:
     models:

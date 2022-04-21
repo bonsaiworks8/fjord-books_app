@@ -16,13 +16,20 @@ class BindingUsersController < ApplicationController
     rel.followed_id = params[:id]
     rel.follower_id = current_user.id
 
-    redirect_to users_url, notice: t('follow_completed') if rel.save
+    if rel.save
+      redirect_to users_url, notice: t('follow_completed')
+    else
+      redirect_to user_url, notice: t('follow_failed')
+    end
   end
 
   def destroy
     rel = BindingUser.find_by(followed_id: params[:id], follower_id: current_user.id)
-    rel&.destroy
 
-    redirect_to users_url, notice: t('unfollow_completed')
+    if rel&.destroy
+      redirect_to users_url, notice: t('unfollow_completed')
+    else
+      redirect_to user_url, notice: t('unfollow_failed')
+    end
   end
 end
