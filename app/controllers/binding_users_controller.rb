@@ -25,7 +25,7 @@ class BindingUsersController < ApplicationController
   end
 
   def destroy
-    rel = BindingUser.find_by(followed_id: params[:user_id], follower_id: current_user.id)
+    rel = current_user.binding_users.find(params[:id])
 
     if rel&.destroy
       redirect_to users_url, notice: t('unfollow_completed')

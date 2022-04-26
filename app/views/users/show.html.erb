@@ -42,7 +42,7 @@
     <% if !current_user.followings.include?(@user) %>
       <%= link_to t('follow'), user_followings_path(@user), method: :post %>
     <% else %>
-      <%= link_to t('unfollow'), user_following_path(@user), method: :delete %>
+      <%= link_to t('unfollow'), user_following_path(@user, @binding_user), method: :delete %>
     <% end %>
   <% end %>
 </p>
