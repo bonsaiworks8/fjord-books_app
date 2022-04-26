@@ -26,6 +26,28 @@
 </p>
 
 <p>
+  <strong><%= t('follow_number') %>:</strong>
+  <%= @user.followings.count %>
+  <%= link_to t('followings'), followings_user_path %>
+</p>
+
+<p>
+  <strong><%= t('follower_number') %>:</strong>
+  <%= @user.followers.count %>
+  <%= link_to t('followers'), followers_user_path %>
+</p>
+
+<p>
+  <% if @user.id != current_user.id %>
+    <% if !current_user.followings.include?(@user) %>
+      <%= link_to t('follow'), user_followings_path(@user), method: :post %>
+    <% else %>
+      <%= link_to t('unfollow'), user_following_path(@user, @binding_user), method: :delete %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
   <% if @user.avatar.attached? %>
     <br>
